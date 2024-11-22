@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHome, faFilm, faShoppingCart, faInfoCircle } from '@fortawesome/free-solid-svg-icons';
 import './Navbar.css';
 
-function Navbar() {
+const Navbar = ({ cartItems }) => {
   const location = useLocation();
 
   return (
@@ -23,7 +23,7 @@ function Navbar() {
           </li>
           <li>
             <Link to="/cart" className={location.pathname === '/cart' ? 'active' : ''}>
-              <FontAwesomeIcon icon={faShoppingCart} /> Cart
+              <FontAwesomeIcon icon={faShoppingCart} /> Cart ({cartItems.length})
             </Link>
           </li>
           <li>
