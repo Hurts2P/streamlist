@@ -4,6 +4,7 @@ import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
 import Subscription from "./components/Subscription";
 import Cart from "./pages/Cart";
+import Movies from "./pages/Movies";
 
 function App() {
   const [cart, setCart] = useState([]);
@@ -23,6 +24,7 @@ function App() {
         <Navbar cartItems={cart} />
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/movies" element={<Movies />} />
           <Route path="/subscriptions" element={<Subscription cart={cart} setCart={setCart} />} />
           <Route path="/cart" element={<Cart cart={cart} setCart={setCart} />} />
         </Routes>
